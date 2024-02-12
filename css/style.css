@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+input,
+button {
+  font-size: 16px;
+}
+
+.head_bar {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+main {
+  /* max-width: 800px; */
+  width: 100%;
+  padding: 16px 32px 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left_section {
+  width: 35%;
+}
+.right_section {
+  width: 60%;
+}
+
+.input_section {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border: 4px solid black;
+  background-color: white;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  position: fixed;
+  left: 16px;
+  top: 25%;
+}
+
+.input_section > h2 {
+  text-align: center;
+  color: black;
+}
+
+.input_section > form > .input {
+  margin: 8px 0;
+}
+
+.input_section > form > button {
+  background-color: black;
+  color: white;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.input_section > form > button > span {
+  font-weight: bold;
+}
+
+.input_section > form > .input > input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 2px solid black;
+}
+
+.input_section > form > .input > label {
+  color: black;
+  font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.search_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  border: 4px solid black;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.search_section > h2 {
+  color: black;
+}
+
+.search_section > form {
+  /* padding: 16px; */
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search_section > form > .wrapper_input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.search_section > form > .wrapper_count {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.search_section > form > label {
+  display: flex;
+  align-items: center;
+}
+
+.search_section > form > .wrapper_input > input {
+  padding: 8px;
+  border: 2px solid black;
+  width: 75%;
+}
+
+.search_section > form > .wrapper_input > button {
+  background-color: black;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  width: 25%;
+}
+
+.book_shelf {
+  margin: 32px 0 0 0;
+  border: 4px solid black;
+  padding: 32px;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.book_shelf > h2 {
+  color: black;
+}
+
+.book_shelf > .book_list {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.book_shelf > .book_list > :not([hidden]) ~ :not([hidden]) {
+  --space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--space-y-reverse)));
+  margin-bottom: calc(1rem * var(--space-y-reverse));
+}
+
+.book_shelf > .book_list > .book_item {
+  padding: 8px 16px 16px 16px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+.book_shelf > .book_list > .book_item > div > h3,
+p {
+  margin: 8px 0;
+}
+
+.book_shelf > .book_list > .book_item > .action > button {
+  border: 0;
+  padding: 8px;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+
+.book_shelf > .book_list > .book_item > .action > .green {
+  background-color: rgb(42, 179, 42);
+  color: white;
+}
+
+.book_shelf > .book_list > .book_item > .action > .red {
+  background-color: rgb(201, 42, 42);
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .input_section {
+    position: relative;
+    left: 0;
+    padding: 16px;
+  }
+  .search_section {
+    padding: 16px;
+  }
+  .book_shelf {
+    padding: 16px;
+  }
+  main {
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 16px 62px 16px;
+  }
+  .left_section {
+    width: 100%;
+  }
+  .right_section {
+    width: 100%;
+    margin-top: 32px;
+  }
+  .book_shelf > .book_list > .book_item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
